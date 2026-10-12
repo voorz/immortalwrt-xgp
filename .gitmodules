@@ -7,3 +7,6 @@
 [submodule "zz-packages/theme/luci-theme-shadcn"]
 	path = zz-packages/theme/luci-theme-shadcn
 	url = https://github.com/eamonxg/luci-theme-shadcn.git
+[submodule "zz-packages/others/luci-app-quickfile"]
+	path = zz-packages/others/luci-app-quickfile
+	url = https://github.com/sbwml/luci-app-quickfile.git
