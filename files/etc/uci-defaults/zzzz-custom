@@ -3,6 +3,10 @@ is_first_boot=`uci -q get zz_config.@status[0].first_boot`
 if test $is_first_boot -gt 0; then
 uci del dhcp.lan.ra_slaac
 uci set network.lan.ipaddr='10.1.1.1/24'
+uci set wireless.radio0.band='5g'
+uci set wireless.radio0.htmode='HE80'
+uci set wireless.radio0.channel='36'
+uci commit wireless
 uci add_list network.lan.ip6class='mpcie1v6'
 uci add_list network.lan.ip6class='mpcie2v6'
 uci add_list network.lan.ip6class='wwanv6'

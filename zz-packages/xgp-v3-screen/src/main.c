@@ -422,6 +422,11 @@ void parse_modem_info()
     strcpy(buf_modem_signal2unit, UNKNOWN_VALUE_REPLACE_STRING);
     FILE *fp;
     char line[256];
+    /* Skip modem info if modem_ctrl is not installed (QModem removed) */
+    if (access("/usr/libexec/rpcd/modem_ctrl", F_OK) != 0)
+    {
+        return;
+    }
     fp = popen("/usr/bin/python3 /usr/zz/modem_info.py", "r");
     if (fp != NULL)
     {
