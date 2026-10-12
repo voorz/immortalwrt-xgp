@@ -91,7 +91,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      workflows: write
     env:
       TZ: Asia/Shanghai
     steps:
@@ -157,10 +156,6 @@ jobs:
           echo "\`\`\`" >> release_info.md
           echo "" >> release_info.md
           echo "</details>" >> release_info.md
-      - name: Create new tag
-        run: |
-          git tag ${{ steps.release-prepare.outputs.new_tag }}
-          git push origin ${{ steps.release-prepare.outputs.new_tag }}
       - name: Rename image
         run: |
           mv release_assets/immortalwrt-rockchip-armv8-nlnet_xiguapi-v3-squashfs-sysupgrade.img.gz release_assets/${{ steps.release-prepare.outputs.IMAGE_PREFIX }}squashfs-sysupgrade.img.gz
