@@ -91,6 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      workflows: write
     env:
       TZ: Asia/Shanghai
     steps:
