@@ -2,10 +2,6 @@
 	path = zz-packages/kmod-fb-tft-gc9307
 	url = https://github.com/zzzz0317/kmod-fb-tft-gc9307.git
 	branch = main
-[submodule "zz-packages/xgp-v3-screen"]
-	path = zz-packages/xgp-v3-screen
-	url = https://github.com/zzzz0317/xgp-v3-screen.git
-	branch = main
 [submodule "zz-packages/others/luci-app-bandix"]
 	path = zz-packages/others/luci-app-bandix
 	url = https://github.com/timsaya/luci-app-bandix.git
