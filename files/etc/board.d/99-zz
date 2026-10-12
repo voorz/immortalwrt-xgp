@@ -3,8 +3,8 @@
 board_config_update
 
 ucidef_set_hostname "zzXGP"
-ucidef_set_root_password_plain "xgpxgpxgp"
+ucidef_set_root_password_plain "root"
 ucidef_set_country "CN"
-ucidef_set_wireless "all" "zzXGP" "psk2+ccmp" "xgpxgpxgp"
+ucidef_set_wireless "all" "AX6" "psk2+ccmp" "c83a350cfb60"
 
 board_config_flush

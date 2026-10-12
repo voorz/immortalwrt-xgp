@@ -1,18 +1,16 @@
 name: Build and Release
 
 on:
-  schedule:
-    - cron: '0 18 * * 4'
+  # schedule:
+  #   - cron: '0 18 * * 4'
   workflow_dispatch:
     # inputs:
     #   tag_name:
     #     description: 'Tag name (e.g., v1.0.0)'
     #     required: true
-  # push:
-  #   branches:
-  #     - main
-  #   tags:
-  #     - '*'
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:

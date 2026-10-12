@@ -8,20 +8,20 @@ echo "update submodules"
 # git submodule update --init --recursive --remote || { echo "submodule update failed"; exit 1; }
 git submodule update --init --recursive || { echo "submodule init failed"; exit 1; }
 
+IMMORTALWRT_TAG="v24.10.6"
+
 if [ -d "immortalwrt" ]; then
     echo "repo dir exists"
     cd immortalwrt
-    git pull || { echo "git pull failed"; exit 1; }
-    git reset --hard HEAD
+    git fetch --tags || { echo "git fetch failed"; exit 1; }
+    git checkout "$IMMORTALWRT_TAG" || { echo "git checkout $IMMORTALWRT_TAG failed"; exit 1; }
+    git reset --hard "$IMMORTALWRT_TAG"
     git clean -fd
 else
     echo "repo dir not exists"
-    git clone -b openwrt-25.12 --single-branch --filter=blob:none "https://github.com/immortalwrt/immortalwrt" || { echo "git clone failed"; exit 1; }
+    git clone --branch "$IMMORTALWRT_TAG" --single-branch --filter=blob:none "https://github.com/immortalwrt/immortalwrt" || { echo "git clone failed"; exit 1; }
     cd immortalwrt
 fi
-
-# reset to 8f6bf3907696dc7de78d1da5e25e0fda223497e8 due to framebuffer compatibility issue
-# git reset --hard 8f6bf3907696dc7de78d1da5e25e0fda223497e8
 
 # echo "Lock Kernel version to 6.6.119"
 # echo "LINUX_VERSION-6.6 = .119" > include/kernel-6.6
@@ -35,7 +35,7 @@ fi
 echo "add feeds"
 cat feeds.conf.default > feeds.conf
 echo "" >> feeds.conf
-echo "src-git qmodem https://github.com/FUjr/QModem.git;stable" >> feeds.conf
+# echo "src-git qmodem https://github.com/FUjr/QModem.git;stable" >> feeds.conf
 # echo "src-git qmodem https://github.com/zzzz0317/QModem.git;v3.0.2" >> feeds.conf
 echo "src-git istore https://github.com/linkease/istore;main" >> feeds.conf
 echo "update files"
@@ -64,7 +64,7 @@ echo "update feeds"
 ./scripts/feeds update -a || { echo "update feeds failed"; exit 1; }
 echo "install feeds"
 ./scripts/feeds install -a || { echo "install feeds failed"; exit 1; }
-./scripts/feeds install -a -f -p qmodem || { echo "install qmodem feeds failed"; exit 1; }
+# ./scripts/feeds install -a -f -p qmodem || { echo "install qmodem feeds failed"; exit 1; }
 
 if [ -L "package/zz-packages" ]; then
     echo "package/zz-packages is already a symlink"
