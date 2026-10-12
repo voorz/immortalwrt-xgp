@@ -1,19 +1,9 @@
-[submodule "zz-packages/kmod-fb-tft-gc9307"]
-	path = zz-packages/kmod-fb-tft-gc9307
-	url = https://github.com/zzzz0317/kmod-fb-tft-gc9307.git
-	branch = main
 [submodule "zz-packages/others/luci-app-bandix"]
 	path = zz-packages/others/luci-app-bandix
 	url = https://github.com/timsaya/luci-app-bandix.git
 [submodule "zz-packages/others/openwrt-bandix"]
 	path = zz-packages/others/openwrt-bandix
 	url = https://github.com/timsaya/openwrt-bandix.git
-[submodule "zz-packages/theme/luci-theme-aurora"]
-	path = zz-packages/theme/luci-theme-aurora
-	url = https://github.com/eamonxg/luci-theme-aurora.git
-[submodule "zz-packages/theme/luci-app-aurora-config"]
-	path = zz-packages/theme/luci-app-aurora-config
-	url = https://github.com/eamonxg/luci-app-aurora-config.git
-[submodule "zz-packages/theme/luci-theme-glass"]
-	path = zz-packages/theme/luci-theme-glass
-	url = https://github.com/rchen14b/luci-theme-glass.git
+[submodule "zz-packages/theme/luci-theme-shadcn"]
+	path = zz-packages/theme/luci-theme-shadcn
+	url = https://github.com/eamonxg/luci-theme-shadcn.git
