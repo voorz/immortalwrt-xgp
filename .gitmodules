@@ -4,3 +4,6 @@
 [submodule "zz-packages/others/luci-app-quickfile"]
 	path = zz-packages/others/luci-app-quickfile
 	url = https://github.com/sbwml/luci-app-quickfile.git
+[submodule "zz-packages/others/luci-app-fan"]
+	path = zz-packages/others/luci-app-fan
+	url = https://github.com/Wanzi-z/luci-app-fan.git
