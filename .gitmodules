@@ -1,9 +1,3 @@
-[submodule "zz-packages/others/luci-app-bandix"]
-	path = zz-packages/others/luci-app-bandix
-	url = https://github.com/timsaya/luci-app-bandix.git
-[submodule "zz-packages/others/openwrt-bandix"]
-	path = zz-packages/others/openwrt-bandix
-	url = https://github.com/timsaya/openwrt-bandix.git
 [submodule "zz-packages/theme/luci-theme-shadcn"]
 	path = zz-packages/theme/luci-theme-shadcn
 	url = https://github.com/eamonxg/luci-theme-shadcn.git
