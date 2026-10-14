@@ -13,6 +13,8 @@ uci add_list network.lan.ip6class='wwanv6'
 uci add_list network.lan.ip6class='wan6'
 uci set luci.main.lang='zh_cn'
 uci set luci.main.mediaurlbase='/luci-static/shadcn'
+# Remove dead istore opkg feed (404 on all mirrors for 24.10.6/aarch64)
+sed -i '/istore/d' /etc/opkg/distfeeds.conf
 uci set uhttpd.main.redirect_https='0'
 uci commit uhttpd
 uci add system led
